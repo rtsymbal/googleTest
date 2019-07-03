@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using googleTest;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
@@ -20,13 +21,19 @@ namespace TestASPNETCore
         public void TestExecution()
         {
             //Title selection
-            googleTest.SeleniumSetMethods.SelectDropDown(driver, "TitleId", "Mr.", "Id");
+            SeleniumSetMethods.SelectDropDown(driver, "TitleId", "Mr.", "Id");
 
             //Initial filling
-            googleTest.SeleniumSetMethods.EnterText(driver, "Initial", "Roman", "Name");
+            SeleniumSetMethods.EnterText(driver, "Initial", "Roman", "Name");
+
+            //Check Title value
+            Console.WriteLine("The value of Title is: " + SeleniumGetMethods.GetTextFromDDL(driver, "TitleId", "Id"));
+
+            //Check Initial value
+            Console.WriteLine("The value of Initial is: " + SeleniumGetMethods.GetText(driver, "Initial", "Id"));
 
             //Click Save button
-            googleTest.SeleniumSetMethods.ClickSmth(driver, "Save", "Name");
+            SeleniumSetMethods.ClickSmth(driver, "Save", "Name");
 
 
             

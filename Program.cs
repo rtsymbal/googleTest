@@ -12,16 +12,24 @@ namespace TestASPNETCore
         [SetUp]
         public void Initialize()
         {
-            driver.Navigate().GoToUrl("http://www.google.pl");
-            Console.WriteLine("Get to Google page");
+            driver.Navigate().GoToUrl("http://www.executeautomation.com/demosite/index.html?UserName=5712654&Password=5546464&Login=Login");
+            Console.WriteLine("Get to page");
         }
 
         [Test]
         public void TestExecution()
         {
-            IWebElement element = driver.FindElement(By.Name("q"));
-            element.SendKeys("First Test");
-            Console.WriteLine("Enter test in search field");
+            //Title selection
+            googleTest.SeleniumSetMethods.SelectDropDown(driver, "TitleId", "Mr.", "Id");
+
+            //Initial filling
+            googleTest.SeleniumSetMethods.EnterText(driver, "Initial", "Roman", "Name");
+
+            //Click Save button
+            googleTest.SeleniumSetMethods.ClickSmth(driver, "Save", "Name");
+
+
+            
         }
 
         [TearDown]

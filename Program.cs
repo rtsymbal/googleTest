@@ -8,10 +8,6 @@ namespace TestASPNETCore
 {
     class Program
     {
-        public static void main(String[] args)
-        {
-
-        }
 
         [SetUp]
         public void Initialize()
@@ -39,8 +35,6 @@ namespace TestASPNETCore
 
             //Click Save button
             SeleniumSetMethods.ClickSmth("Save", PropertyType.Name);
-
-
             
         }
 

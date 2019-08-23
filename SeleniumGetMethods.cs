@@ -1,20 +1,18 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace googleTest
 {
     class SeleniumGetMethods
     {
-        public static string GetTextFromDDL(string element, PropertyType elementtype)
+        public static string GetTextFromDdl(string element, PropertyType elementtype)
         {
             if (elementtype == PropertyType.Id)
-                return new SelectElement(PropertiesCollection.Driver.FindElement(By.Id(element))).AllSelectedOptions.SingleOrDefault().Text;
+                return new SelectElement(PropertiesCollection.Driver.FindElement(By.Id(element))).AllSelectedOptions.SingleOrDefault()?.Text;
             if (elementtype == PropertyType.Name)
-                return new SelectElement(PropertiesCollection.Driver.FindElement(By.Name(element))).AllSelectedOptions.SingleOrDefault().Text;
+                return new SelectElement(PropertiesCollection.Driver.FindElement(By.Name(element))).AllSelectedOptions.SingleOrDefault()?.Text;
             else
                 return String.Empty;
         }

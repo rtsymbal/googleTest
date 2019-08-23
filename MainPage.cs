@@ -1,8 +1,5 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace googleTest
 {
@@ -13,7 +10,7 @@ namespace googleTest
         //public MainPage(IWebDriver _driver) => driver = _driver;
 
         private IWebElement DropDown => Driver.FindElement(By.Id("TitleId"));
-        public void SelectDD(string value) => new SelectElement(DropDown).SelectByText(value);
+        public void SelectDd(string value) => new SelectElement(DropDown).SelectByText(value);
 
         private IWebElement InitialTxt => Driver.FindElement(By.Name("Initial"));
         public void InputTxt(string value) => InitialTxt.SendKeys(value);
